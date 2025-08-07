@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-
+import api from "../lib/axios.js";
 import Navbar from "../components/Navbar.jsx";
 import RateLimitedUI from "../components/RateLImetedUI.jsx";
 import NoteCard from "../components/NoteCard.jsx";
+import NotesNotFound from "../components/NotesNotFound.jsx";
 
 const HomePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [notes, setNotes] = useState([]);
 
-  const baseURL = "http://localhost:5001";
-
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get(`${baseURL}/api/notes`);
+        const response = await api.get(`/notes`);
 
         setNotes(response.data);
         console.log(response.data);
@@ -56,6 +55,8 @@ const HomePage = () => {
       <Navbar />
       {isRateLimited && <RateLimitedUI />}
 
+      {!isRateLimited && !isLoading && notes.length === 0 && <NotesNotFound />}
+
       <div className="max-w-7xl mt-6 mx-auto p-4">
         {isLoading && (
           <div className="text-center text-primary py-10">
@@ -66,7 +67,7 @@ const HomePage = () => {
       {notes.length > 0 && !isRateLimited && (
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {notes.map((note) => (
-            <NoteCard key={note._id} note={note} />
+            <NoteCard key={note._id} note={note} setNotes={setNotes} />
           ))}
         </div>
       )}
