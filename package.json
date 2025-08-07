@@ -1,0 +1,21 @@
+{
+  "name": "fc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run build && npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zulfikaryehya/MERN_NOTE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zulfikaryehya/MERN_NOTE/issues"
+  },
+  "homepage": "https://github.com/Zulfikaryehya/MERN_NOTE#readme",
+  "description": ""
+}
