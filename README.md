@@ -2,7 +2,7 @@
 
 A modern, responsive notes application built with the MERN stack (MongoDB, Express, React, Node.js). This application allows users to create, read, update, and delete notes with a clean and intuitive interface.
 
-![MERN Notes App](https://github.com/Zulfikaryehya/MERN_NOTE/raw/main/screenshot.png)
+**Link on render: https://mern-note-1-82yf.onrender.com**
 
 ## Features
 
@@ -16,6 +16,7 @@ A modern, responsive notes application built with the MERN stack (MongoDB, Expre
 ## Tech Stack
 
 ### Frontend
+
 - React
 - Vite (for fast development and building)
 - Tailwind CSS with DaisyUI
@@ -24,6 +25,7 @@ A modern, responsive notes application built with the MERN stack (MongoDB, Expre
 - React Hot Toast for notifications
 
 ### Backend
+
 - Node.js with Express
 - MongoDB with Mongoose
 - Rate limiting middleware
@@ -32,6 +34,7 @@ A modern, responsive notes application built with the MERN stack (MongoDB, Expre
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - npm or yarn
 - MongoDB connection (local or Atlas)
@@ -39,12 +42,14 @@ A modern, responsive notes application built with the MERN stack (MongoDB, Expre
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Zulfikaryehya/MERN_NOTE.git
 cd MERN_NOTE
 ```
 
 2. Install dependencies for both frontend and backend:
+
 ```bash
 # Install backend dependencies
 npm install --prefix backend
@@ -54,6 +59,7 @@ npm install --prefix frontend
 ```
 
 3. Create a `.env` file in the backend directory with the following variables:
+
 ```
 PORT=5001
 MONGO_URI=your_mongodb_connection_string
@@ -61,6 +67,7 @@ NODE_ENV=development
 ```
 
 4. Start the development servers:
+
 ```bash
 # Run backend server
 npm run start --prefix backend
@@ -78,25 +85,27 @@ npm run build
 ```
 
 This command will:
+
 1. Install dependencies for both frontend and backend
 2. Build the frontend application
 3. Prepare the application for deployment
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET    | /api/notes | Get all notes |
+| Method | Endpoint       | Description         |
+| ------ | -------------- | ------------------- |
+| GET    | /api/notes     | Get all notes       |
 | GET    | /api/notes/:id | Get a specific note |
-| POST   | /api/notes | Create a new note |
-| PUT    | /api/notes/:id | Update a note |
-| DELETE | /api/notes/:id | Delete a note |
+| POST   | /api/notes     | Create a new note   |
+| PUT    | /api/notes/:id | Update a note       |
+| DELETE | /api/notes/:id | Delete a note       |
 
 ## Deployment
 
 This application is set up for easy deployment on platforms like Render, Vercel, or Heroku.
 
 For Render deployments:
+
 - Build Command: `npm run build`
 - Start Command: `npm run start`
 
